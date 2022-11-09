@@ -1,5 +1,5 @@
-function carouselSlider() {
-  let slider = document.getElementById("slider");
+function Slider() {
+  let container = document.getElementById("container");
 
   const slides = [
     {
@@ -34,17 +34,46 @@ function carouselSlider() {
     },
   ];
 
-  slider.innerHTML = slides
+  container.innerHTML = slides
     .map(
       (slide, index) =>
-        `
-    <div className="slides fade" key=${index}>
-<img src=${slide.image} alt='Carousel image'/>
-    <p className="text">${slide.title}</p>
-    </div>
+        `<div class="container">
+        <div id='slides' class='slides' key=${index}>
+        <img src=${slide.image} alt='Carousel image'/>
+        <p class="text">${slide.title}</p>
+        </div>
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+        </div>
 `
     )
     .join("");
 }
 
-carouselSlider();
+Slider();
+
+let slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides((slideIndex += n));
+}
+
+function currentSlide(n) {
+  showSlides((slideIndex = n));
+}
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("slides");
+  if (n > slides.length) {
+    slideIndex = 1;
+  }
+  if (n < 1) {
+    slideIndex = slides.length;
+  }
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+
+  slides[slideIndex - 1].style.display = "block";
+}
