@@ -35,24 +35,17 @@ function Slider() {
   ];
 
   container.innerHTML = slides
-    .map(
-      (slide, index) =>
-        `<div class="container">
-        <div id='slides'
-        onmousemove='showButtons()'
-onmouseout='hideButtons()'
-        class='slides' key=${index}>
+    .map((slide, index) => {
+      return `<div class="container">
+        <div id='slides' onmousemove='showButtons()'        class='slides' key=${index}>
 <div id='img' className="image">
 <img src=${slide.image} style="width:100%"  alt='Carousel image'/>
-
-</div>        <p
- class="text"
- >${slide.title}</p>
+</div>
+<p class="text">${slide.title}</p>
         </div>
-       
         </div>
-`
-    )
+`;
+    })
     .join("");
 }
 
