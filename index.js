@@ -5,32 +5,32 @@ function Slider() {
     {
       title: "1/6",
       image:
-        "https://images.unsplash.com/photo-1664574654589-8f6c9b94c02d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxlZGl0b3JpYWwtZmVlZHwxfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60",
+        "https://images.unsplash.com/photo-1524591431555-cc7876d14adf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8c2xpZGVyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
     },
     {
       title: "2/6",
       image:
-        "https://images.unsplash.com/photo-1668000819543-ec8a570939ac?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=464&q=80",
+        "https://images.unsplash.com/photo-1532716303749-62ba9821e104?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8c2xpZGVyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
     },
     {
       title: "3/6",
       image:
-        "https://images.unsplash.com/photo-1667977549554-51ab4fcacd7e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwzfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60",
+        "https://images.unsplash.com/photo-1554941426-a965fb2b9258?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTB8fHNsaWRlcnxlbnwwfDB8MHx8&auto=format&fit=crop&w=400&q=60",
     },
     {
       title: "4/6",
       image:
-        "https://images.unsplash.com/photo-1667827576128-374c6ab46ee2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw1fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60",
+        "https://images.unsplash.com/photo-1598387846419-a2c870ad3ecd?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTl8fHNsaWRlcnxlbnwwfDB8MHx8&auto=format&fit=crop&w=400&q=60",
     },
     {
       title: "5/6",
       image:
-        "https://images.unsplash.com/photo-1667926964370-840afdde03e1?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw0fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60",
+        "https://images.unsplash.com/photo-1524680319993-fe837ad4bf2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2xpZGVyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
     },
     {
       title: "6/6",
       image:
-        "https://plus.unsplash.com/premium_photo-1666544989783-13fc7091024f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHw3fHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=400&q=60",
+        "https://images.unsplash.com/photo-1524680319993-fe837ad4bf2d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8c2xpZGVyfGVufDB8MHwwfHw%3D&auto=format&fit=crop&w=400&q=60",
     },
   ];
 
@@ -38,14 +38,12 @@ function Slider() {
     .map(
       (slide, index) =>
         `<div class="container">
-        <div id='slides' class='slides' key=${index}>
-<div id='img'
-onmousemove='showButtons()'
+        <div id='slides'
+        onmousemove='showButtons()'
 onmouseout='hideButtons()'
-
-
-className="image">
-<img src=${slide.image}  alt='Carousel image'/>
+        class='slides' key=${index}>
+<div id='img' className="image">
+<img src=${slide.image} style="width:100%"  alt='Carousel image'/>
 
 </div>        <p
  class="text"
@@ -72,9 +70,9 @@ function showButtons() {
   buttons.style.display = "block";
 }
 
-function hideButtons() {
-  buttons.style.display = "none";
-}
+// function hideButtons() {
+//   buttons.style.display = "none";
+// }
 
 function showSlides(n) {
   let i;
@@ -89,5 +87,5 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
 
-  slides[slideIndex - 1].style.display = "flex";
+  slides[slideIndex - 1].style.display = "block";
 }
