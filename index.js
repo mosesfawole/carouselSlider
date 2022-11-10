@@ -39,11 +39,19 @@ function Slider() {
       (slide, index) =>
         `<div class="container">
         <div id='slides' class='slides' key=${index}>
-        <img src=${slide.image} alt='Carousel image'/>
-        <p class="text">${slide.title}</p>
+<div id='img'
+onmousemove='showButtons()'
+onmouseout='hideButtons()'
+
+
+className="image">
+<img src=${slide.image}  alt='Carousel image'/>
+
+</div>        <p
+ class="text"
+ >${slide.title}</p>
         </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+       
         </div>
 `
     )
@@ -58,10 +66,16 @@ showSlides(slideIndex);
 function plusSlides(n) {
   showSlides((slideIndex += n));
 }
-
-function currentSlide(n) {
-  showSlides((slideIndex = n));
+let buttons = document.getElementById("buttons");
+function showButtons() {
+  // let image = document.getElementById("img");
+  buttons.style.display = "block";
 }
+
+function hideButtons() {
+  buttons.style.display = "none";
+}
+
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("slides");
@@ -75,5 +89,5 @@ function showSlides(n) {
     slides[i].style.display = "none";
   }
 
-  slides[slideIndex - 1].style.display = "block";
+  slides[slideIndex - 1].style.display = "flex";
 }
