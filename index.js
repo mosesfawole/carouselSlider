@@ -37,7 +37,7 @@ function Slider() {
   container.innerHTML = slides
     .map((slide, index) => {
       return `<div class="container">
-        <div id='slides' onmousemove='showButtons()'        class='slides' key=${index}>
+        <div id='slides' class='slides' key=${index}>
 <div id='img' className="image">
 <img src=${slide.image} style="width:100%"  alt='Carousel image'/>
 </div>
@@ -63,9 +63,9 @@ function showButtons() {
   buttons.style.display = "block";
 }
 
-// function hideButtons() {
-//   buttons.style.display = "none";
-// }
+function hideButtons() {
+  buttons.style.display = "none";
+}
 
 function showSlides(n) {
   let i;

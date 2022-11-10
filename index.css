@@ -44,6 +44,9 @@ p {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
+.buttons {
+  display: block;
+}
 
 @media screen and (min-width: 900px) {
   img {
